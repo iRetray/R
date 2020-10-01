@@ -1760,53 +1760,42 @@ summary {
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuICAjT2J0ZW5jaW9uIGRlIGRhdG9zIGRlc2RlIHVuYSBVUkwsIGRhdG9zIGRlIHVuYSBjb3NlY2hhIGRlIHZpbm9cbiAgcmVkd2luZSA8LSByZWFkLmNzdihcImh0dHBzOi8vYml0Lmx5LzJEZHBHOUVcIiwgaGVhZGVyID0gVClcbmBgYCJ9 -->
-<pre class="r"><code>  #Obtencion de datos desde una URL, datos de una cosecha de vino
-  redwine &lt;- read.csv(&quot;https://bit.ly/2DdpG9E&quot;, header = T)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuICAjRGF0b3MgZGVzZGUgdW4gZGlyZXRvcmlvIGludGVybm8gZGUgUlxuICBpcmlzXG4gIGNsYXNzKGlyaXMpXG5gYGAifQ== -->
+<pre class="r"><code>  #Datos desde un diretorio interno de R
+  iris
+  class(iris)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuICAjQW5hbGlzaXMgZGUgbGEgZXN0cnVjdHVyYSBkZSBsb3MgZGF0b3MgY29udGVuaWRvcyBlbiBlbCBkYXRhU2V0XG4gIHN0cihyZWR3aW5lKVxuICAjT2J0ZW5jaW9uIGRlIGRhdG9zIGVzdGFkaXN0aWNvcyBnZW5lcmFsZXNcbiAgc3VtbWFyeShyZWR3aW5lKVxuYGBgIn0= -->
-<pre class="r"><code>  #Analisis de la estructura de los datos contenidos en el dataSet
-  str(redwine)
-  #Obtencion de datos estadisticos generales
-  summary(redwine)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuICAjRGVzdHJ1Y3R1cmFjaW9uIGRlIGRhdG9zIGVtcGFxdWV0YWRvc1xuICBkYXRhKFwiaXJpc1wiKVxuICBsaWJyYXJ5KGRwbHlyKVxuICBjb2xuYW1lcyhpcmlzKVxuICBpcmlzbnVtIDwtIHNlbGVjdCgoaXJpcyksU2VwYWwuTGVuZ3RoOlBldGFsLldpZHRoKVxuYGBgIn0= -->
+<pre class="r"><code>  #Destructuracion de datos empaquetados
+  data(&quot;iris&quot;)
+  library(dplyr)
+  colnames(iris)
+  irisnum &lt;- select((iris),Sepal.Length:Petal.Width)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuICAjRGVzcGxpZWd1ZSBkZSB1bmEgbWF0cml6IGRlIGNvdmFyaWFuemFcbiAgY292KHJlZHdpbmUpXG4gICNEZXNwbGllZ3VlIGRlIHVuYSBtYXRyaXogZGUgY29yZWxhY2lvblxuICBjb3IocmVkd2luZSlcbiAgI0Rlc3BsaWVndWUgZGUgY29yZWxhY2lvbiBlbnRyZSB1bmEgc3VibWF0cml6XG4gIGNvcihyZWR3aW5lWywgYyhcIsOvLi5maXhlZC5hY2lkaXR5XCIsIFwiY2l0cmljLmFjaWRcIiwgXCJwSFwiKV0pXG5gYGAifQ== -->
-<pre class="r"><code>  #Despliegue de una matriz de covarianza
-  cov(redwine)
-  #Despliegue de una matriz de corelacion
-  cor(redwine)
-  #Despliegue de corelacion entre una submatriz
-  cor(redwine[, c(&quot;ï..fixed.acidity&quot;, &quot;citric.acid&quot;, &quot;pH&quot;)])</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuICAjRGVzcGxpZWd1ZSBkZSB1bmEgbWF0cml6IGRlIGNvdmFyaWFuemEgeSBjb3JlbGFjaW9uXG4gIGNvdihpcmlzbnVtKVxuICBjb3IoaXJpc251bSlcbmBgYCJ9 -->
+<pre class="r"><code>  #Despliegue de una matriz de covarianza y corelacion
+  cov(irisnum)
+  cor(irisnum)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuICAjR3JhZmljYWNpb24gZGUgbG9zIG1vZGVsb3NcbiAgcGxvdChyZWR3aW5lKVxuYGBgIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuICAjR3JhZmljYWNpb24gZGUgbG9zIG1vZGVsb3NcbiAgcGxvdChpcmlzbnVtKVxuYGBgIn0= -->
 <pre class="r"><code>  #Graficacion de los modelos
-  plot(redwine)</code></pre>
+  plot(irisnum)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuICAjR3JhZmljYWNpb24gZGUgbG9zIG1vZGVsb3NcbiAgcGxvdChyZWR3aW5lJMOvLi5maXhlZC5hY2lkaXR5IH4gcmVkd2luZSRjaXRyaWMuYWNpZClcbmBgYCJ9 -->
-<pre class="r"><code>  #Graficacion de los modelos
-  plot(redwine$ï..fixed.acidity ~ redwine$citric.acid)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpgYGB7cn0NCiAgI09idGVuY2lvbiBkZSBkYXRvcyBkZXNkZSB1bmEgVVJMLCBkYXRvcyBkZSB1bmEgY29zZWNoYSBkZSB2aW5vDQogIHJlZHdpbmUgPC0gcmVhZC5jc3YoImh0dHBzOi8vYml0Lmx5LzJEZHBHOUUiLCBoZWFkZXIgPSBUKQ0KYGBgDQoNCmBgYHtyfQ0KICAjQW5hbGlzaXMgZGUgbGEgZXN0cnVjdHVyYSBkZSBsb3MgZGF0b3MgY29udGVuaWRvcyBlbiBlbCBkYXRhU2V0DQogIHN0cihyZWR3aW5lKQ0KICAjT2J0ZW5jaW9uIGRlIGRhdG9zIGVzdGFkaXN0aWNvcyBnZW5lcmFsZXMNCiAgc3VtbWFyeShyZWR3aW5lKQ0KYGBgDQoNCmBgYHtyfQ0KICAjRGVzcGxpZWd1ZSBkZSB1bmEgbWF0cml6IGRlIGNvdmFyaWFuemENCiAgY292KHJlZHdpbmUpDQogICNEZXNwbGllZ3VlIGRlIHVuYSBtYXRyaXogZGUgY29yZWxhY2lvbg0KICBjb3IocmVkd2luZSkNCiAgI0Rlc3BsaWVndWUgZGUgY29yZWxhY2lvbiBlbnRyZSB1bmEgc3VibWF0cml6DQogIGNvcihyZWR3aW5lWywgYygiw68uLmZpeGVkLmFjaWRpdHkiLCAiY2l0cmljLmFjaWQiLCAicEgiKV0pDQpgYGANCg0KYGBge3IsIGZpZy53aWR0aD0xMCwgZmlnLmhlaWdodD0xMH0NCiAgI0dyYWZpY2FjaW9uIGRlIGxvcyBtb2RlbG9zDQogIHBsb3QocmVkd2luZSkNCmBgYA0KDQpgYGB7ciwgZmlnLndpZHRoPTEwLCBmaWcuaGVpZ2h0PTEwfQ0KICAjR3JhZmljYWNpb24gZGUgbG9zIG1vZGVsb3MNCiAgcGxvdChyZWR3aW5lJMOvLi5maXhlZC5hY2lkaXR5IH4gcmVkd2luZSRjaXRyaWMuYWNpZCkNCmBgYA0KDQoNCg==</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpgYGB7cn0NCiAgI0RhdG9zIGRlc2RlIHVuIGRpcmV0b3JpbyBpbnRlcm5vIGRlIFINCiAgaXJpcw0KICBjbGFzcyhpcmlzKQ0KYGBgDQoNCmBgYHtyfQ0KICAjRGVzdHJ1Y3R1cmFjaW9uIGRlIGRhdG9zIGVtcGFxdWV0YWRvcw0KICBkYXRhKCJpcmlzIikNCiAgbGlicmFyeShkcGx5cikNCiAgY29sbmFtZXMoaXJpcykNCiAgaXJpc251bSA8LSBzZWxlY3QoKGlyaXMpLFNlcGFsLkxlbmd0aDpQZXRhbC5XaWR0aCkNCmBgYA0KDQpgYGB7cn0NCiAgI0Rlc3BsaWVndWUgZGUgdW5hIG1hdHJpeiBkZSBjb3ZhcmlhbnphIHkgY29yZWxhY2lvbg0KICBjb3YoaXJpc251bSkNCiAgY29yKGlyaXNudW0pDQpgYGANCg0KYGBge3IsIGZpZy53aWR0aD0xMCwgZmlnLmhlaWdodD0xMH0NCiAgI0dyYWZpY2FjaW9uIGRlIGxvcyBtb2RlbG9zDQogIHBsb3QoaXJpc251bSkNCmBgYA0K</div>
 
 
 
@@ -1853,7 +1842,7 @@ $(document).ready(function () {
 <!-- code folding -->
 <script>
 $(document).ready(function () {
-  window.initializeSourceEmbed("extractCSV.Rmd");
+  window.initializeSourceEmbed("flowerAnalysis.Rmd");
   window.initializeCodeFolding("show" === "show");
 });
 </script>

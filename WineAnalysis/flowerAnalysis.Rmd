@@ -1,0 +1,29 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+  #Datos desde un diretorio interno de R
+  iris
+  class(iris)
+```
+
+```{r}
+  #Destructuracion de datos empaquetados
+  data("iris")
+  library(dplyr)
+  colnames(iris)
+  irisnum <- select((iris),Sepal.Length:Petal.Width)
+```
+
+```{r}
+  #Despliegue de una matriz de covarianza y corelacion
+  cov(irisnum)
+  cor(irisnum)
+```
+
+```{r, fig.width=10, fig.height=10}
+  #Graficacion de los modelos
+  plot(irisnum)
+```
