@@ -30,8 +30,37 @@ output: html_notebook
 ```
 
 ```{r, fig.width=10, fig.height=10}
-  #Graficacion de los modelos
+  #Graficacion de variable contra variable
   plot(redwine$ï..fixed.acidity ~ redwine$citric.acid)
 ```
+
+```{r}
+  #Creacion de subgrupos
+  library(dplyr)
+  wineQualitySix <- subset(redwine, quality == 6)
+  boxplot(wineQualitySix$ï..fixed.acidity)
+  abline(h=13, col=6)
+  wineQualitySixCuted <- filter(wineQualitySix, ï..fixed.acidity < 13)
+  boxplot(wineQualitySixCuted$ï..fixed.acidity)
+```
+
+```{r}
+  boxplot(wineQualitySixCuted$pH)
+  quantile(wineQualitySixCuted$pH)
+  abline(h=3.69, col=6)
+```
+
+```{r}
+  wineQualitySixCuted2 <- filter(wineQualitySixCuted, pH < 3.69)
+  boxplot(wineQualitySixCuted2$pH)
+```
+
+```{r}
+  #Comparar cuantiles teoricos con valores reales
+  qqnorm(wineQualitySixCuted2[, "pH"], main = "Grafica del pH")
+  qqline(wineQualitySixCuted2[, "pH"])
+```
+
+
 
 

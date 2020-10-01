@@ -3,7 +3,7 @@
     "path": "C:/Users/julia/Desktop/R/WineAnalysis/extractCSV.Rmd",
     "project_path": "extractCSV.Rmd",
     "type": "r_markdown",
-    "hash": "1012686394",
+    "hash": "260958211",
     "contents": "",
     "dirty": false,
     "created": 1601569854164.0,
@@ -12,16 +12,16 @@
     "properties": {
         "tempName": "Untitled1",
         "chunk_output_type": "inline",
-        "cursorPosition": "24,0",
-        "scrollLine": "15",
+        "cursorPosition": "59,2",
+        "scrollLine": "53",
         "ignored_words": "Obtencion,datos\n"
     },
     "folds": "",
-    "lastKnownWriteTime": 1601573801,
+    "lastKnownWriteTime": 1601576814,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1601573801255,
+    "last_content_update": 1601576814786,
     "read_only": false,
     "read_only_alternatives": []
 }

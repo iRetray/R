@@ -27,3 +27,19 @@ output: html_notebook
   #Graficacion de los modelos
   plot(irisnum)
 ```
+
+```{r}
+  setosaFlowers <- subset(iris, Species == "setosa")
+  mean(setosaFlowers$Petal.Width)
+```
+
+```{r}
+  boxplot(irisnum)
+```
+
+```{r}
+  qqnorm(irisnum[, "Sepal.Length"], main = "Grafica del Sepal.Length")
+  qqline(irisnum[, "Sepal.Length"])
+```
+
+

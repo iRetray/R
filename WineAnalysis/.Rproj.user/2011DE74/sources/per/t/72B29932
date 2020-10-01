@@ -3,7 +3,7 @@
     "path": "C:/Users/julia/Desktop/R/WineAnalysis/flowerAnalysis.Rmd",
     "project_path": "flowerAnalysis.Rmd",
     "type": "r_markdown",
-    "hash": "758835344",
+    "hash": "2811766711",
     "contents": "",
     "dirty": false,
     "created": 1601573260237.0,
@@ -12,15 +12,15 @@
     "properties": {
         "tempName": "Untitled1",
         "chunk_output_type": "inline",
-        "cursorPosition": "28,3",
-        "scrollLine": "0"
+        "cursorPosition": "39,6",
+        "scrollLine": "35"
     },
     "folds": "",
-    "lastKnownWriteTime": 1601573668,
+    "lastKnownWriteTime": 1601584980,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1601573668631,
+    "last_content_update": 1601584980628,
     "read_only": false,
     "read_only_alternatives": []
 }

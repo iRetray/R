@@ -1,0 +1,2 @@
+"0","  #Comparar cuantiles teoricos con valores reales"
+"0","  qqnorm(wineQualitySixCuted2[, ""pH""], main = ""Grafica del pH"")"
