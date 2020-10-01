@@ -1,0 +1,9 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+  redwine <- read.csv("https://bit.ly/2DdpG9E", header = T)
+```
+

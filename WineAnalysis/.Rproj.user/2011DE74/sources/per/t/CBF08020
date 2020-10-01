@@ -1,0 +1,26 @@
+{
+    "id": "CBF08020",
+    "path": "C:/Users/julia/Desktop/WineAnalysis/extractCSV.Rmd",
+    "project_path": "extractCSV.Rmd",
+    "type": "r_markdown",
+    "hash": "3410765950",
+    "contents": "",
+    "dirty": false,
+    "created": 1601569854164.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "tempName": "Untitled1",
+        "chunk_output_type": "inline",
+        "cursorPosition": "6,59",
+        "scrollLine": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1601570168,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1601570168706,
+    "read_only": false,
+    "read_only_alternatives": []
+}
