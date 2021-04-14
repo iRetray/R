@@ -5,6 +5,7 @@ getwd()
 # Definir directorio de trabajo.
 #===============================================================================
 
+setwd("C:/Users/julian.cruz/Desktop/R/DataBasesAnalysis")
 
 
 # DATA FRAME EN R
