@@ -179,11 +179,14 @@ exportedData
 
 library("eurostat")
 
+
 #------------- Se busca "un tema" con search_eurostat
 T1 <- search_eurostat("employment", type = "all") 
-
+T1$code[290]
+T1[333,]
 
 #-------------- Elegir una base de datos en Eurostat
-
+DataBaseEurostat <- "cult_emp_sex"
 
 #------------------ Descargar los datos con get_eurostat()
+DataEuro <- get_eurostat(DataBaseEurostat, time_format = "raw", keepFlags = F)
