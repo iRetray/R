@@ -1,0 +1,179 @@
+---
+title: "Sesion 7"
+author: "Carolina Luque"
+date: "19/4/2021"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+# Definir directorio de trabajo
+
+```
+
+
+# Descripción conjunto de Datos. "Entender el negocio"
+
+Los datos corresponden a una investigación médica orientada a estudiar la capacidad pulmonar de las personas en función de si eran fumadoras o no. A cada persona, se le preguntó, a través de un cuestionario, su género, edad, hábitos de deporte, la ciudad de residencia, si era fumadora, y en caso de que lo fuera, cuántos cigarrillos al día de promedio fumaba y los años que hacía que fumaba. Además, se midió el peso, la altura y la capacidad pulmonar a partir de un test de aire expulsado, desde donde se tomó como capacidad pulmonar la medida FEF (forced expiratory flow), que es la velocidad del aire saliendo del pulmón durante la porción central de una espiración forzada. Se mide en litros/segundo.
+
+El archivo se denomina Fumadores_raw.csv, contiene 300 registros y 9 variables. Estas variables son: Sex, Sport, Years, Cig, PC, City, Weight, Age, Height.
+
+
+| Variable | Descripción                                                                                            |
+|----------|--------------------------------------------------------------------------------------------------------|
+| Sex      | Género del encuestado M:Masculino F: Femenino                                                          |
+| Sport    | Frecuencia con la que práctica deporte 1: Nunca  2: Algunas veces. 3: Regularmente. 4: Todos los días. |
+| Years    | Años que lleva fumando.                                                                                |
+| Cig      | Número promedio de cigarrillos al día.                                                                 |
+| PC       | Capacidad pulmonar                                                                                     |
+| City     | Ciudad donde recide.                                                                                   |
+| Weight   | Peso en kilogramos                                                                                     |
+| Age      | Edad en años                                                                                           |
+| Height   | Estatura en centímetros                                                                                |
+
+
+```{r echo=FALSE}
+#Cargar la base de datos.
+
+
+#Visualizar las 6 primera filas. 
+
+
+#Dimensión de la base.
+
+
+```
+
+
+# Preprocesamiento de datos.
+
+El preprocesamiento de los datos se hace para depurar la base y posteriormente hacer el análisis que se requiera. Es válido aplicar todas las técnicas de procesamiento vistas, dependiendo del tipo de base que tengamos.
+
+## Tipo de variables.
+
+Identifcar el tipo de variables y cómo las lee R.
+
+
+```{r}
+#Tipo de variables que tiene la base
+
+
+```
+
+Como se puede observar, R no ha asignado el tipo de dato apropiado a las variables "Sport", "PC", por lo que a continuación se procede a hacer la asignación correcta.
+
+
+## Coerción de las variables.
+
+```{r}
+#Coerción de las variables.
+
+
+```
+
+
+## Revisar inconsistencias en la base de datos.
+
+Con un resumer preliminar se pueden detectar inconsistencias en la base.
+
+
+```{r}
+#Resumen
+
+
+```
+
+Se observa que: La variable Weight toma valores inadmisibles que pueden ser error de digitación o indicativo de uso de diferentes unidades para su medición. 
+
+El arreglo de la variable Weight lo haremos con la función mutate().
+
+```{r}
+library(dplyr)
+
+
+```
+
+Revisar los datos de la variable Sex.
+
+
+```{r}
+
+
+```
+
+Se evidencia que la columna "Sex" tiene mayúsculas y minúsculas por lo cual es importante unificar
+
+
+Hacer un resumen de los datos con la función summary() para identificar si todavía hay inconsistencias en la base.
+
+
+```{r}
+
+```
+
+
+
+## Valores perdidos y datos atípicos.
+
+Los datos perdidos se pueden eliminar o imputar. Por el momento los vamos a eliminar.
+
+
+```{r}
+# Cantidad de valores perdidos en la base de datos.
+
+
+# Eliminar los valores perdidos.
+
+
+# Para verificar que ya no tenemos datos perdidos.
+
+```
+
+El diagrama de caja se construye sólo con variables cuantitativas. Permite identificar datos atípicos que pueden deberse a error de medición o valores que indican un comportamineto particular de la variable y en tanto, sugieren tener cuidado con su análisis.
+
+
+```{r}
+
+```
+
+
+## Normalizar variables.
+
+### Normalizar variables cuantitativas.
+La normalización o estandarización se lleva a cabo cuado hay problemas de escala. A continuación se muestra como llevar a cabo la normalización de la variable PC pero sin hacer cambios en la base original porque para ésta base no hay necesidad de estandarizar ninguna de sus variables cuantitativas.
+
+```{r}
+
+```
+
+
+### Normalizar variables cualitativas.
+
+¿Cómo estan escritos las respuestas de la variable City y la variable Sex?
+
+Es importante revisar que todas las observaciones registradas en una misma columna se encuentre escritas de la misma manera. A continuación se hace el caambio para la variable City.
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+Ejercicio: Normalice la variable Sex de tal manera que todas la observaciones sean mayúsculas.
+
+```{r}
+
+```
+
+También podemos cambiar los nombres de los niveles de la variable Sport para que 1:Nunca, 2:Algunas veces, 3:Regularmente y 4:Todos los días.
+
+```{r}
+
+```
+
