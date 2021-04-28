@@ -85,4 +85,4 @@ resultadosApply
 
 ## Conclusiones
 
-R resulta ser una herramienta muy util para el manejo de datos y su sencilla forma de filtrar y crear datos de analisis. Por otro lado, el lenguaje es facil de usar y aprender. Las tablas creadas son faciles de leer y existen multiples funciones para su creacion, analisis y ordenamiento.
+R resulta ser una herramienta muy util para el manejo de datos y su sencilla forma de filtrar y crear datos de analisis. Por otro lado, el lenguaje es facil de usar y aprender. Las tablas creadas son faciles de leer y existen multiples funciones para su creacion, analisis y ordenamiento. Actualmente, en Colombia existe mucha desigualdad y falta de acceso para todas las regiones a internet, un recurso tremendamente valioso, especialmente en tiempos de cuarentena y virtualidad.
