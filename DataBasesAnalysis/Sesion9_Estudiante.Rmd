@@ -1,0 +1,196 @@
+---
+title: "Sesion 9"
+author: "Carolina Luque"
+date: "26/4/2021"
+output: html_document
+---
+
+```{r echo=FALSE}
+#Definir el entorno de trabajo
+
+```
+
+```{r}
+#Cargar la base de datos (clase anterior)
+
+```
+
+Hacer cuadros o tablas para mostrar resultados es una parte importante de cualquier informe o investigación. El propósito de la sesión de hoy es aprender a construir tablas dentro del documento final y para ello vamos a utilizar la función kable().
+
+
+# Construcción de tablas con porcentajes.
+
+Vamos a trabajar con la base de datos de fumadores y para cada pregunta vamos a construir una tabla que resuma la información y permita responder al interrogante propuesto.
+
+```{r}
+library(tidyverse)
+library(dplyr)
+library(knitr) #Generar tablas en el documento.
+```
+
+### ¿Cuántas y qué porcentaje de personas por género hicieron parte de la encuesta?
+
+
+```{r}
+#Cambiar el nombre de la columna Sex por Genero
+
+```
+
+
+```{r}
+#Para construir las tabla con la información solicitada vamos a seguir los siguientes pasos:
+# 1.Agrupar por Genero y asignar a Tabla1
+#Tabla1 <- Datos %>% group_by(Genero); Tabla1
+# 2.Hacer el conteo del total de casos por género.
+#Tabla1 <- Datos %>% group_by(Genero)%>% summarise(Total=n()); Tabla1
+# 3.Crear una nueva variable que corresponda al porcentaje por genero.
+Tabla1 <- Datos %>% group_by(Genero)%>%
+          summarise(Total=n()) %>% mutate(Porcentaje=round(Total/sum(Total),2)); Tabla1
+
+```
+
+
+
+
+### ¿Cuál es el porcentaje de hombres y mujeres por ciudad?
+
+```{r}
+#Cambiar el nombre de la columna City por Ciudad
+
+```
+
+
+```{r}
+#Para construir las tabla con la información solicitada vamos a seguir los siguientes pasos:
+
+# 1. Contar personas por Ciudad y Genero, asignar a Tabla2
+
+
+# 2. Agrupar por ciudad
+
+
+# 3. Crear una variable que calcule el porcentaje de hombres y mujeres por ciudad.
+
+
+# 4. Quitar la columna de los conteos 
+
+
+# 5. Tomar las categorias de la columna Genero y convertirlas en las columnas indicando el porcentaje en cada caso
+
+
+```
+
+
+
+### Enfoquemonos sólo en tres ciudades: ALCANAR, BARCELONA, BLANES.
+
+```{r}
+# Crear una nueva base que se llame DatosR con las ciudades de interés.
+
+
+```
+
+```{r}
+# ¿Cuántos registros tiene la nueva base?
+
+```
+
+### ¿Cuál es el valor medio para todas las variables cuantitativas en las tres ciudades de interés?
+
+```{r}
+#Para construir la tabla con la información solicitada vamos a seguir los siguientes pasos:
+
+# 1. Agrupar por ciudad. Asignar a Tabla3
+
+
+# 2. Crear una variable resumen que corresponda al promedio de tiempo que llevan fumando las personas en cada ciudad.
+
+
+# 3. Terminar la tabla anexando las demás medidas resumen
+
+```
+
+
+### ¿Cuál es el valor medio de tiempo, número de cigarrilos diarios y PC por género en las tres ciudades de interés?
+
+```{r}
+#Adecuar la tabla anterior. 
+
+
+```
+
+# ¿Cómo presentar mejor mis tablas?
+
+```{r}
+#Ajustar el número de digitos, alineación y colocar título
+
+```
+
+## Librería kableExtra()
+
+```{r}
+#Cargar la libreria
+
+```
+
+
+```{r}
+#kable_styling()
+#Puedo ver cómo va a salir en el html
+
+```
+
+```{r}
+#Divisiones marcadas por color
+
+```
+
+```{r}
+#Resaltar la fila por la que se  pasa el curso
+
+```
+
+
+```{r}
+#Filas más angostas
+
+```
+
+```{r}
+#Ajustar al tamaño de la pantalla para ver los resultados.
+
+```
+
+
+```{r}
+#Reducir el ancho de la tabla
+
+```
+
+```{r}
+#Cambiar la posición de la tabla.
+
+```
+
+
+```{r}
+#Dejar la tabla como un objeto flotante.
+
+```
+
+Esta tabla se ubicará al lado derecho
+
+```{r}
+#Cambiar el tamaño de letra 
+
+```
+
+```{r}
+#Resaltar una columna.
+
+```
+
+```{r}
+#Resaltar una fila y Resaltar valores dentro de la tabla.
+
+```
