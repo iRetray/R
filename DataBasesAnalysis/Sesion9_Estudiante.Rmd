@@ -39,27 +39,13 @@ library(knitr) #Generar tablas en el documento.
 
 ```{r}
 #Para construir las tabla con la información solicitada vamos a seguir los siguientes pasos:
-
-# 1.Agrupar por Genero y asignar a Tabla1
-
-
+#Tabla1 <- Datos %>% group_by(Genero); Tabla1
 # 2.Hacer el conteo del total de casos por género.
-
-
+#Tabla1 <- Datos %>% group_by(Genero)%>% summarise(Total=n()); Tabla1
 # 3.Crear una nueva variable que corresponda al porcentaje por genero.
+Tabla1 <- Datos %>% group_by(Genero)%>%
+          summarise(Total=n()) %>% mutate(Porcentaje=round(Total/sum(Total),2)); Tabla1
 
-
-```
-
-
-
-
-### ¿Cuál es el porcentaje de hombres y mujeres por ciudad?
-
-```{r}
-#Cambiar el nombre de la columna City por Ciudad
-
-```
 
 
 ```{r}
