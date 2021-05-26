@@ -1,0 +1,73 @@
+---
+title: "Regresiones lineales con R"
+author: "Julian Camilo Cruz Sanchez"
+date: "25/5/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+![](./advertising.png)
+
+## Descripción de la base de datos
+
+La base de datos utilizada en este documento contiene información sobre un **negocio** que invierte cierta cantidad de dinero en **publicidad** y obtiene ciertas **ventas**, agrupando estos datos de forma mensual. Tal como se menciona anteriormente, las variables, ambas **cuantitativas** y relacionadas para una correcta creación de un modelo de regresión lineal, son las siguientes:
+
+* **InversionEnPublicidad:** Denotado en la cantidad de dinero en COP
+* **VentasObtenidas:** Denotado en la cantidad numerica de unidades
+
+Al realizar un modelo de regresión lineal se podran **predecir valores proximos** de ventas que se obtendrán al invertir dinero en publicidad de una forma mucho mas exacta y tomando en cuenta el **comportamiento y relación directamente proprocional** que tienen las dos variables. 
+
+## Creando un modelo de regresión lineal
+
+Inicialmente se exportan los datos y se hace una **limpieza superficial**, en este caso unicamente un cambio de titulos para las variables, debido a la simpleza de la base de datos:
+
+```{r}
+setwd("C:/Users/Retray/Desktop/R/DataBasesAnalysis/LinearRegression")
+library(readxl)
+sales = read_excel(file.choose())
+names(sales) = c("InversionEnPublicidad", "VentasObtenidas")
+```
+
+A continuación es importante **verificar la correlación entre las dos variables**, asegurando que al realizar un modelo de regresión simple se tengan datos validos. Se espera que al obtener este coeficiente de relación de Pearson, se encuentre en un **rango positivo y aceptable** ( mayor a 0 y lo más cercano a 1 ):
+
+```{r}
+cor(sales$InversionEnPublicidad, sales$VentasObtenidas)
+pairs(sales)
+```
+
+Dadas estas dos variables correlacionadas, se pueden graficar los valores uno a uno para ver la **dispersion generada por datos no generados mediante una función, sino mediante mediciones con muchos factores de varianza**:
+
+```{r}
+plot(sales$InversionEnPublicidad, sales$VentasObtenidas, xlab="Dinero invertido en Publicidad", ylab = "Ventas obtenidas")
+```
+
+Ahora se creará un modelo lineal que tome en cuenta todos los valores para crear una **linea de tendencia general:**
+
+```{r}
+regressionVariable = sales$InversionEnPublicidad
+linearRegression <- lm(as.matrix(sales) ~ sales$InversionEnPublicidad, data = sales)
+summary(linearRegression)
+```
+
+## Datos importantes de la regresión lineal
+
+**Intervalo de confianza del 95%:**
+```{r}
+confint(linearRegression)
+```
+
+**Linea de tendencia:**
+```{r}
+plot(sales$InversionEnPublicidad, sales$VentasObtenidas, xlab="Dinero invertido en Publicidad", ylab = "Ventas obtenidas")
+abline(linearRegression)
+```
+
+**Gráfica de normalidad:**
+```{r}
+residue = rstandard(linearRegression)
+qqnorm(residue)
+qqline(residue)
+```
