@@ -70,42 +70,64 @@ En los puntos que siguen se propone hacer gráficos para visualizar la informaci
 
 6. (12 puntos) Utilizando la libreria base y ggplo2 construya un histograma para la variable "interdisciplinar". Describa que observa en el comportamiento de ésta variable y comente acerca de la libreria que más le gusto para hacer el gráfico.
 
+La variable Interdisciplinar muestra la calificacion en una materia conjunta para todos los estudiantes que presentaron la prueba. En este caso, ggplot2 se vuelve tremendamente útil para ver gráficamente la concentración del puntaje.
+
+
 ```{r}
 library(ggplot2)
-Histogram <- function(columnName) {
-  DFPlot <- ggplot(data = df, aes_string(x = columnName))
-  DFPlot + geom_histogram(bins = 10)
-}
-Histogram("Interdisciplinar")
-histogram = ggplot(students2, aes(x="Interdisciplinar"))
-histogram + geom_histogram()
-View(histogram)
+hist(students2$Interdisciplinar, breaks=50, col="yellow", main="Histograma para materia Interdisciplinar" )
 ```
 
 7. (12 puntos) Utilizando la libreria que prefiera construya un gráfico donde se muestre la función de densidad de la variable "Matemáticas" por "Género". Haga una interpretación del gráfico.
 
-
-
+```{r}
+library(ggplot2)
+library(tidyverse)
+ggplot(students2) + aes(x=Matematicas) + geom_density()
+```
 
 8. (12 puntos) Utilizando la libreria que prefiera construya un diagrama circular donde muestre el porcentaje de estudiantes que presentaron la prueba por programa. Haga una interpretación del gráfico.
 
-
+```{r}
+library(ggplot2)
+library(tidyverse)
+ggplot(students2,aes(x="",y=students2$Programa, fill=students2$Interdisciplinar))+
+  geom_bar(stat = "identity",color="white")+
+  coord_polar(theta="y")
+```
 
 9. (12 puntos)Construya un gráfico que le permita comparar ver como se comporta la variable "Matemáticas" por "Programa". Interprete lo que observa. 
 
-
-
+```{r}
+library(ggplot2)
+library(tidyverse)
+ggplot(students2,aes(x="",y=students2$Programa, fill=students2$Matematicas))+
+  geom_bar(stat = "identity",color="white")+
+  coord_polar(theta="y")
+```
 
 10. (12 puntos) Construya un boxplot a partir del cual pueda comparar la variable "Matemáticas" con las demás materias. Incluya la media de cada materia en el gráfico. Describa lo que observa en la gráfica.
 
-
-
+```{r}
+library(ggplot2)
+library(tidyverse)
+ggplot(students2, aes(x=0, y=students2$Matematicas)) + geom_boxplot()
+```
 
 11. (12 puntos) Construya un diagrama de barras apiladas para ver el tipo de programa por ciudad. Interprete el gráfico
 
-
+```{r}
+library(ggplot2)
+library(tidyverse)
+ggplot(data=students2, aes(x=students2$Programa, y=students2$CiudadColegio, fill=students2$Programa)) + 
+    geom_bar(stat="identity", position="dodge")
+```
 
 12. (12 puntos) Construya un un gráfico que le permita comparar el comportamineto de la variable "Matemáticas" para los colegios ubicados en los municipios de CHIA y FACATATIVA.
 
-
-
+```{r}
+library(ggplot2)
+library(tidyverse)
+ggplot(data=students2, aes(x=students2$Matematicas, y=students2$CiudadColegio, fill=students2$Matematicas)) + 
+    geom_bar(stat="identity", position="dodge")
+```
